@@ -1,0 +1,1 @@
+web: node tsx watch src/server.ts

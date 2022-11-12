@@ -7,6 +7,8 @@ import { guessRoutes } from './routes/guess';
 import { pollRoutes } from './routes/poll';
 import { userRoutes } from './routes/user';
 
+const port = Number(process.env.PORT) || 3333;
+
 async function bootstrap() {
   const fastify = Fastify({ logger: true }); // set logger to true to enable logging
 
@@ -24,7 +26,7 @@ async function bootstrap() {
   await fastify.register(pollRoutes);
   await fastify.register(userRoutes);
 
-  await fastify.listen({ port: 3333 });
+  await fastify.listen({ port: port });
   // await fastify.listen({ port: 3333 });
 }
 
